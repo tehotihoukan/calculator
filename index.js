@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 8080;
 
@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
 app.get('/add/:a/:b', (req, res) => {
   res.send({
     result: calc.add(Number(req.params.a), Number(req.params.b))
+  });
+});
+
+app.get('/multiply/:a/:b', (req, res) => {
+  res.send({
+    result: calc.multiply(Number(req.params.a), Number(req.params.b))
   });
 });
 
